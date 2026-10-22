@@ -44,3 +44,25 @@ Supervisor:
 Verificamos:
 <img width="586" height="118" alt="image" src="https://github.com/user-attachments/assets/c7844811-4adf-40f9-ab8e-368637deb359" />
 
+## ETAPA 5: Entregables y Validación del Laboratorio
+1.
+Demostramos fehacientemente que tanto auditoria.log como auditoria_espejo.log comparten de forma unívoca el mismo número de inodo.
+<img width="770" height="115" alt="image" src="https://github.com/user-attachments/assets/92ec2db1-a4be-48ea-b8f5-ad9d01a61cbd" />
+Número de inodo idéntico: La primera columna muestra el número de inodo (1735028). Ambos archivos comparten exactamente el mismo número, lo que prueba que apuntan al mismo bloque de datos físico en el disco.
+
+Contador de enlaces (Link Count): La tercera columna (el número 2 ubicado después de los permisos) indica que existen 2 entradas en el sistema de archivos apuntando a ese mismo inodo.
+
+2.
+Se aprecia la flecha indicativa de direccionamiento del enlace simbólico acceso_balances.lnk creado en el entorno de Gerencia.
+<img width="772" height="94" alt="image" src="https://github.com/user-attachments/assets/b8ff0094-5f79-4a75-9ff4-3db1a4300d3a" />
+La primera letra (l): Confirma que el objeto es un enlace simbólico (soft link).
+
+La flecha (->): Muestra de forma explícita el direccionamiento desde el archivo acceso_balances.lnk hacia la carpeta destino /Departamentos/Contable/Balances.
+
+Tamaño en bytes (ej. 31): Muestra que el enlace no contiene los datos reales, sino únicamente la cantidad de caracteres que componen la ruta del archivo o carpeta apuntada.
+
+3.
+<img width="727" height="99" alt="image" src="https://github.com/user-attachments/assets/ff8a5b37-820d-40d0-8bc0-d28bd19a5838" />
+Principio de menor privilegio: Demuestra que las reglas octales aplicadas (570 en Contable) impiden que un usuario de un área ajena (juan de Ventas) pueda inspeccionar la información contable.
+
+Redirección de flujo (STDERR): Confirma la captura correcta del canal 2 para auditar intentos fallidos de acceso a recursos protegidos.
