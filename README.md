@@ -18,6 +18,30 @@ maiden@Xubuntu:~/Desktop$ touch Departamentos/Ventas/auditoria.log
 ### tree
 <img width="540" height="429" alt="image" src="https://github.com/user-attachments/assets/0fc90638-199c-4237-8212-07abab8ee863" />
 
+## Etapa 3
+Enlace simbólico (soft link):
+```ln -s Departamentos/Contable/Balances Departamentos/Gerencia/acceso_balances.lnk```
+Enlace físico (hard link):
+```ln Departamentos/Contable/auditoria.log Departamentos/Contable/auditoria_espejo.log```
+
+Comprobación de inodos:
+```
+ls -li Departamentos/Contable/
+total 16
+1735028 -r-xrwx--- 2 supervisor Contable    6 sep 29 19:43 auditoria_espejo.log
+1735028 -r-xrwx--- 2 supervisor Contable    6 sep 29 19:43 auditoria.log
+1735018 dr-xrwx--- 2 supervisor Contable 4096 sep 29 19:20 Balances
+1735019 dr-xrwx--- 2 supervisor Contable 4096 sep 29 19:20 Documentos
+```
+
+```
+ls -li Departamentos/Gerencia/
+total 0
+1735031 lrwxrwxrwx 1 supervisor Gerencia 31 sep 29 19:32 acceso_balances.lnk -> Departamentos/Contable/Balances
+1735027 -rwx------ 1 supervisor Gerencia  0 sep 29 19:22 auditoria.log
+```
+
+
 ## Etapa 4
 ### 1. Definición de la Estructura de Seguridad
 ### Creación de grupos
