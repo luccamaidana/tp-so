@@ -1,4 +1,10 @@
-# tp-so
+# Trabajo Práctico: Laboratorio de GNU/Linux
+## Integrantes:
+Martin Busnadiego 53020 martinbusnaisi@gmail.com
+Juan Pablo Sacovechi 54431 juanpablosacovechiutn@gmail.com
+Sofia Aylen Fleytas 52108 fleytassofiaaylen@gmail.com
+Maidana Lucca 52407 luccamaidana03@gmail.com
+
 ## Etapa 2
 ### Creación de carpetas y archivos
 ```
